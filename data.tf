@@ -90,7 +90,7 @@ locals {
   # - create flow logs
 
   # # if var.vpc_id is passed, assume create = `false` and cidr comes from data.aws_vpc
-  create_vpc = var.vpc_id == null ? true : false
+  create_vpc = var.create_vpc ? true : false
   vpc        = local.create_vpc ? aws_vpc.main[0] : data.aws_vpc.main[0]
   cidr_block = var.cidr_block == null ? local.vpc.cidr_block : var.cidr_block
 

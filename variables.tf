@@ -9,6 +9,12 @@ variable "cidr_block" {
   type        = string
 }
 
+variable "create_vpc" {
+  description = "VPC ID to use if not creating VPC."
+  default     = true
+  type        = bool
+}
+
 variable "vpc_id" {
   description = "VPC ID to use if not creating VPC."
   default     = null
